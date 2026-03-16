@@ -135,7 +135,7 @@ def adicionar_carrinho(produto, carrinho, nome, quantidade):
     :return: Retorna uma string indicando o resultado da operação:
              - "Sucesso" se o produto foi adicionado ou atualizado no carrinho.
              - "A Quantidade é maior que o estoque" se o estoque for insuficiente.
-             - "Produto não encontrado" se o nome não existir no catálogo.
+             - "Produto não encontrado" se o nome não existir no catálogo.#
     """
     for p in produto:
         if p["nome"].lower() == nome.lower():
