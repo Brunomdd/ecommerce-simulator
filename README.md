@@ -38,7 +38,6 @@ Foco: Python, JSON, modularização, exceções.
 
 GitHub stars
 
-Feito com ❤️ em São Paulo! 🤝 PRs bem-vindas!
 
 text
 
