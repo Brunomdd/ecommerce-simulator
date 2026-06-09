@@ -86,23 +86,22 @@ def salvar(produtos):
     with open("ecommerce.json", "w", encoding="utf-8") as arq:
         json.dump(produtos, arq, ensure_ascii=False, indent=4)
 
-
-def leiaInt(num):
-    """
-    Solicita e valida uma entrada numérica inteira do usuário.
-
-    Fica em loop até que o usuário digite um valor que possa ser convertido
-    para inteiro. Exibe mensagem de erro caso a entrada seja inválida.
-
-    :param num: String com a mensagem exibida ao usuário como prompt de entrada.
-    :return: Valor inteiro digitado pelo usuário.
-    """
+def executar(funcao,num):
     while True:
         try:
-            valor = int(input(num))
-            return valor
+            valor = input(num)
+            if not valor:
+                print('Erro! valor não pode ficar vazio!')
+                continue
+            return funcao(valor)
         except ValueError:
-            print("Erro, digite um número válido!")
+            print("Erro, só aceitamos valores inteiros!")
+    r
+            
+
+def leiaint(num):
+    return executar(int,num)
+
 
 
 def listar_produtos(produtos):
@@ -233,7 +232,7 @@ def main():
         print("4 - Finalizar compra")
         print("5 - Sair do sistema")
 
-        opc = leiaInt("Escolha uma opção: ")
+        opc = leiaint("Escolha uma opção: ")
         if opc == 1:
             listar_produtos(produtos)
         elif opc == 2:
@@ -241,7 +240,7 @@ def main():
             if not nome:
                 print("digite um nome válido!")
                 continue
-            quantidade = leiaInt("quantidade: ")
+            quantidade = leiaint("quantidade: ")
             if quantidade <= 0:
                 print("Erro quantidade invalida!")
                 continue
